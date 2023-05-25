@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @list %>
+
+<p><strong>List detail </strong></p>
+<ul class="list-group">
+  <% @lists.each do |movie| %>
+    <li class="list-group-item">
+      <%= movie.title %>
+      <%= movie.overview%>
+      <%= movie.poster_url%>
+    </li>
+  <% end %>
+</ul>
+<br>
