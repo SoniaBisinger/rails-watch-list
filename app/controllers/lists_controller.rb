@@ -1,14 +1,14 @@
 class ListsController < ApplicationController
-    before_action :set_list, only: %i[show]
+    before_action :set_list, only: :show
     
     def index 
         @lists = List.all 
     end 
 
     def show
-        @list = List.find(params[:id])
+        @bookmarks = @list.bookmarks
     end 
-
+    
     def new
         @list = List.new 
     end
@@ -17,7 +17,7 @@ class ListsController < ApplicationController
         @list = List.new(list_params)
 
         if @list.save 
-            redirect_to @list, notice: "List was successfully created." 
+            redirect_to root_path, notice: "List was successfully created." 
         else 
             render :new, status: :unprocessable_entitiy
         end 

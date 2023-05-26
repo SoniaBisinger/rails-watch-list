@@ -4,11 +4,15 @@
 
     <% @lists.each do |list| %>
     <p>
-        <strong>Name:</strong>
-        <%= list.name %>
+        <div class="containter border">
+            <strong>Name:</strong>
+            <%= link_to list.name, list %>
+        </div>
     </p>
     <%end%>
 
 </h1>
 
-
+<div>
+  <%= link_to "Create a list", new_list_path %>
+</div>
