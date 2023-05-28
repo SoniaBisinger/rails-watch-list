@@ -7,3 +7,11 @@
     <br>
     <%= bookmark.comment %>
 <% end %>
+
+<div>
+  <%= link_to "Add a movie", new_list_bookmark_path(@list.id) %>
+</div>
+
+<div>
+  <%= link_to "Homepage", root_path %>
+</div>
